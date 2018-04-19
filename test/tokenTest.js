@@ -1,12 +1,12 @@
-assertRevert = require('./helpers/assertRevert');
-const StandardTokenMock = artifacts.require('Token2GB');
+let assertRevert = require('./helpers/assertRevert');
+const token2GB = artifacts.require('Token2GB');
 
-contract('StandardToken', function ([_, owner, recipient, anotherAccount]) {
+contract('StandardToken', function ([ contractOwner, owner, recipient, anotherAccount]) {
   const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
 
   beforeEach(async function () {
-    this.token = await StandardTokenMock.new();
-    this.token.addSupply(100, owner)
+    this.token = await token2GB.new();
+    await this.token.addSupply(100, owner, {from: contractOwner})
   });
 
   describe('total supply', function () {
@@ -467,4 +467,22 @@ contract('StandardToken', function ([_, owner, recipient, anotherAccount]) {
       });
     });
   });
+  describe('Disable add supply', function () {
+    
+    it("reverts when called by account other than owner", async function() {
+      await assertRevert(this.token.disable({ from: anotherAccount }));
+    });
+
+    it('emits a disable event', async function() {
+      const { logs } = await this.token.disable({from:contractOwner})
+      assert.equal(logs.length, 1);
+      assert.equal(logs[0].event, 'Disabled');
+    });
+
+    it('reverts when adding supply after disabling', async function() {
+      await this.token.disable({from:contractOwner})
+      await assertRevert(this.token.addSupply(100, owner, { from: anotherAccount }));
+    });
+    
+  })
 });
