@@ -64,8 +64,8 @@
   ],
   "bytecode": "0x606060405260008054600160a060020a033316600160a860020a0319909116179055610212806100306000396000f3006060604052600436106100565763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416632f2770db811461005b5780638da5cb5b14610070578063f2fde38b1461009f575b600080fd5b341561006657600080fd5b61006e6100be565b005b341561007b57600080fd5b61008361013c565b604051600160a060020a03909116815260200160405180910390f35b34156100aa57600080fd5b61006e600160a060020a036004351661014b565b60005433600160a060020a039081169116146100d957600080fd5b6000805474ff00000000000000000000000000000000000000001916740100000000000000000000000000000000000000001790557f75884cdadc4a89e8b545db800057f06ec7f5338a08183c7ba515f2bfdd9fe1e160405160405180910390a1565b600054600160a060020a031681565b60005433600160a060020a0390811691161461016657600080fd5b600160a060020a038116151561017b57600080fd5b600054600160a060020a0380831691167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a36000805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03929092169190911790555600a165627a7a72305820b84b33de09e322e3b6ff87baed8a544ad9569ad146d6941b555ac5029bc9cd870029",
   "deployedBytecode": "0x6060604052600436106100565763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416632f2770db811461005b5780638da5cb5b14610070578063f2fde38b1461009f575b600080fd5b341561006657600080fd5b61006e6100be565b005b341561007b57600080fd5b61008361013c565b604051600160a060020a03909116815260200160405180910390f35b34156100aa57600080fd5b61006e600160a060020a036004351661014b565b60005433600160a060020a039081169116146100d957600080fd5b6000805474ff00000000000000000000000000000000000000001916740100000000000000000000000000000000000000001790557f75884cdadc4a89e8b545db800057f06ec7f5338a08183c7ba515f2bfdd9fe1e160405160405180910390a1565b600054600160a060020a031681565b60005433600160a060020a0390811691161461016657600080fd5b600160a060020a038116151561017b57600080fd5b600054600160a060020a0380831691167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a36000805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03929092169190911790555600a165627a7a72305820b84b33de09e322e3b6ff87baed8a544ad9569ad146d6941b555ac5029bc9cd870029",
-  "sourceMap": "69:326:0:-;;;120:5;104:21;;-1:-1:-1;;;;;523:10:8;515:18;-1:-1:-1;;;;;;515:18:8;;;;;;69:326:0;;;;;;",
-  "deployedSourceMap": "69:326:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;297:94;;;;;;;;;;;;;;239:20:8;;;;;;;;;;;;;;;-1:-1:-1;;;;;239:20:8;;;;;;;;;;;;;;871:188;;;;;;;;;;-1:-1:-1;;;;;871:188:8;;;;;297:94:0;679:5:8;;665:10;-1:-1:-1;;;;;665:19:8;;;679:5;;665:19;657:28;;;;;;344:8:0;:15;;-1:-1:-1;;344:15:0;;;;;374:10;;;;;;;;;;297:94::o;239:20:8:-;;;-1:-1:-1;;;;;239:20:8;;:::o;871:188::-;679:5;;665:10;-1:-1:-1;;;;;665:19:8;;;679:5;;665:19;657:28;;;;;;-1:-1:-1;;;;;951:22:8;;;;943:31;;;;;;1010:5;;-1:-1:-1;;;;;989:37:8;;;;1010:5;989:37;;;;;;;;;;1036:5;:16;;-1:-1:-1;;1036:16:8;-1:-1:-1;;;;;1036:16:8;;;;;;;;;;871:188::o",
+  "sourceMap": "69:326:0:-;;;120:5;104:21;;-1:-1:-1;;;;;523:10:7;515:18;-1:-1:-1;;;;;;515:18:7;;;;;;69:326:0;;;;;;",
+  "deployedSourceMap": "69:326:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;297:94;;;;;;;;;;;;;;239:20:7;;;;;;;;;;;;;;;-1:-1:-1;;;;;239:20:7;;;;;;;;;;;;;;871:188;;;;;;;;;;-1:-1:-1;;;;;871:188:7;;;;;297:94:0;679:5:7;;665:10;-1:-1:-1;;;;;665:19:7;;;679:5;;665:19;657:28;;;;;;344:8:0;:15;;-1:-1:-1;;344:15:0;;;;;374:10;;;;;;;;;;297:94::o;239:20:7:-;;;-1:-1:-1;;;;;239:20:7;;:::o;871:188::-;679:5;;665:10;-1:-1:-1;;;;;665:19:7;;;679:5;;665:19;657:28;;;;;;-1:-1:-1;;;;;951:22:7;;;;943:31;;;;;;1010:5;;-1:-1:-1;;;;;989:37:7;;;;1010:5;989:37;;;;;;;;;;1036:5;:16;;-1:-1:-1;;1036:16:7;-1:-1:-1;;;;;1036:16:7;;;;;;;;;;871:188::o",
   "source": "pragma solidity 0.4.21;\n\nimport \"./installedContracts/Ownable.sol\";\n\ncontract Disable is Ownable {\n\n    bool disabled = false;\n\n    event Disabled();\n\n    /**\n    * @dev Throws if addSupply is disabled.\n    */\n    modifier notDisabled() {\n        require(disabled == false);\n        _;\n    }\n\n    function disable() external onlyOwner{\n        disabled = true;\n        emit Disabled();\n    }\n\n\n}",
   "sourcePath": "/home/cyril/Documents/2GetherProjects/ERC20_2GB_Token/contracts/Disable.sol",
   "ast": {
@@ -94,7 +94,7 @@
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 34,
-        "sourceUnit": 439,
+        "sourceUnit": 383,
         "src": "25:42:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -108,10 +108,10 @@
               "id": 3,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 438,
+              "referencedDeclaration": 382,
               "src": "89:7:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$438",
+                "typeIdentifier": "t_contract$_Ownable_$382",
                 "typeString": "contract Ownable"
               }
             },
@@ -121,7 +121,7 @@
           }
         ],
         "contractDependencies": [
-          438
+          382
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -129,7 +129,7 @@
         "id": 33,
         "linearizedBaseContracts": [
           33,
-          438
+          382
         ],
         "name": "Disable",
         "nodeType": "ContractDefinition",
@@ -263,7 +263,7 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 794,
+                      "referencedDeclaration": 738,
                       "src": "247:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -417,7 +417,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 412,
+                  "referencedDeclaration": 356,
                   "src": "325:9:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -482,7 +482,7 @@
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 34,
-        "sourceUnit": 439,
+        "sourceUnit": 383,
         "src": "25:42:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -496,10 +496,10 @@
               "id": 3,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 438,
+              "referencedDeclaration": 382,
               "src": "89:7:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$438",
+                "typeIdentifier": "t_contract$_Ownable_$382",
                 "typeString": "contract Ownable"
               }
             },
@@ -509,7 +509,7 @@
           }
         ],
         "contractDependencies": [
-          438
+          382
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -517,7 +517,7 @@
         "id": 33,
         "linearizedBaseContracts": [
           33,
-          438
+          382
         ],
         "name": "Disable",
         "nodeType": "ContractDefinition",
@@ -651,7 +651,7 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 794,
+                      "referencedDeclaration": 738,
                       "src": "247:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -805,7 +805,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 412,
+                  "referencedDeclaration": 356,
                   "src": "325:9:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -850,5 +850,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-04-19T13:54:34.299Z"
+  "updatedAt": "2018-04-19T14:12:19.265Z"
 }
