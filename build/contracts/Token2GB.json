@@ -1,0 +1,838 @@
+{
+  "contractName": "Token2GB",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "name",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "approve",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "totalSupply",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "transferFrom",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "disable",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "decimals",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "name": "balance",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_amount",
+          "type": "uint256"
+        },
+        {
+          "name": "_target",
+          "type": "address"
+        }
+      ],
+      "name": "addSupply",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "symbol",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "transfer",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "name": "spender",
+          "type": "address"
+        }
+      ],
+      "name": "allowance",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "AddSupply",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [],
+      "name": "Disabled",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Approval",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Transfer",
+      "type": "event"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity 0.4.21;\n\n/**\n/// @title Token2GB Contract\n/// @author 2GetherBlockchain Team\n*/\n\nimport \"./installedContracts/StandardToken.sol\";\nimport \"./installedContracts/DetailedERC20.sol\";\nimport \"./Supply.sol\";\n\n/**\n * @title Token2GB\n*/\ncontract Token2GB is ERC20, DetailedERC20, Supply {\n    \n    function Token2GB() \n    DetailedERC20(\"2GetherFreeToken\", \"2GB\", 18)       \n    public {}\n\n}",
+  "sourcePath": "/home/cyril/Documents/2GetherProjects/ERC20_2GB_Token/contracts/Token2GB.sol",
+  "ast": {
+    "absolutePath": "/home/cyril/Documents/2GetherProjects/ERC20_2GB_Token/contracts/Token2GB.sol",
+    "exportedSymbols": {
+      "Token2GB": [
+        177
+      ]
+    },
+    "id": 178,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 158,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".21"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:3"
+      },
+      {
+        "absolutePath": "/home/cyril/Documents/2GetherProjects/ERC20_2GB_Token/contracts/installedContracts/StandardToken.sol",
+        "file": "./installedContracts/StandardToken.sol",
+        "id": 159,
+        "nodeType": "ImportDirective",
+        "scope": 178,
+        "sourceUnit": 779,
+        "src": "97:48:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/cyril/Documents/2GetherProjects/ERC20_2GB_Token/contracts/installedContracts/DetailedERC20.sol",
+        "file": "./installedContracts/DetailedERC20.sol",
+        "id": 160,
+        "nodeType": "ImportDirective",
+        "scope": 178,
+        "sourceUnit": 308,
+        "src": "146:48:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/cyril/Documents/2GetherProjects/ERC20_2GB_Token/contracts/Supply.sol",
+        "file": "./Supply.sol",
+        "id": 161,
+        "nodeType": "ImportDirective",
+        "scope": 178,
+        "sourceUnit": 157,
+        "src": "195:22:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": [],
+            "baseName": {
+              "contractScope": null,
+              "id": 162,
+              "name": "ERC20",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 350,
+              "src": "266:5:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ERC20_$350",
+                "typeString": "contract ERC20"
+              }
+            },
+            "id": 163,
+            "nodeType": "InheritanceSpecifier",
+            "src": "266:5:3"
+          },
+          {
+            "arguments": [],
+            "baseName": {
+              "contractScope": null,
+              "id": 164,
+              "name": "DetailedERC20",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 307,
+              "src": "273:13:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_DetailedERC20_$307",
+                "typeString": "contract DetailedERC20"
+              }
+            },
+            "id": 165,
+            "nodeType": "InheritanceSpecifier",
+            "src": "273:13:3"
+          },
+          {
+            "arguments": [],
+            "baseName": {
+              "contractScope": null,
+              "id": 166,
+              "name": "Supply",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 156,
+              "src": "288:6:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Supply_$156",
+                "typeString": "contract Supply"
+              }
+            },
+            "id": 167,
+            "nodeType": "InheritanceSpecifier",
+            "src": "288:6:3"
+          }
+        ],
+        "contractDependencies": [
+          33,
+          156,
+          273,
+          307,
+          350,
+          382,
+          438
+        ],
+        "contractKind": "contract",
+        "documentation": "@title Token2GB",
+        "fullyImplemented": false,
+        "id": 177,
+        "linearizedBaseContracts": [
+          177,
+          156,
+          33,
+          273,
+          438,
+          307,
+          350,
+          382
+        ],
+        "name": "Token2GB",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 175,
+              "nodeType": "Block",
+              "src": "394:2:3",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 176,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "hexValue": "3247657468657246726565546f6b656e",
+                    "id": 170,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "string",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "345:18:3",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_stringliteral_16e9df9c2b445ef4fd6ed5cb5a360cc08e7cf98ce9c440f48558033f81bbcfa8",
+                      "typeString": "literal_string \"2GetherFreeToken\""
+                    },
+                    "value": "2GetherFreeToken"
+                  },
+                  {
+                    "argumentTypes": null,
+                    "hexValue": "324742",
+                    "id": 171,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "string",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "365:5:3",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_stringliteral_f4b893895f61b618da00d41d97da74eb140586735eea33ee5b4a90b03cd926e9",
+                      "typeString": "literal_string \"2GB\""
+                    },
+                    "value": "2GB"
+                  },
+                  {
+                    "argumentTypes": null,
+                    "hexValue": "3138",
+                    "id": 172,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "372:2:3",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_18_by_1",
+                      "typeString": "int_const 18"
+                    },
+                    "value": "18"
+                  }
+                ],
+                "id": 173,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 169,
+                  "name": "DetailedERC20",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 307,
+                  "src": "331:13:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_type$_t_contract$_DetailedERC20_$307_$",
+                    "typeString": "type(contract DetailedERC20)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "331:44:3"
+              }
+            ],
+            "name": "Token2GB",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 168,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "323:2:3"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 174,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "394:0:3"
+            },
+            "scope": 177,
+            "src": "306:90:3",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 178,
+        "src": "245:154:3"
+      }
+    ],
+    "src": "0:399:3"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/cyril/Documents/2GetherProjects/ERC20_2GB_Token/contracts/Token2GB.sol",
+    "exportedSymbols": {
+      "Token2GB": [
+        177
+      ]
+    },
+    "id": 178,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 158,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".21"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:3"
+      },
+      {
+        "absolutePath": "/home/cyril/Documents/2GetherProjects/ERC20_2GB_Token/contracts/installedContracts/StandardToken.sol",
+        "file": "./installedContracts/StandardToken.sol",
+        "id": 159,
+        "nodeType": "ImportDirective",
+        "scope": 178,
+        "sourceUnit": 779,
+        "src": "97:48:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/cyril/Documents/2GetherProjects/ERC20_2GB_Token/contracts/installedContracts/DetailedERC20.sol",
+        "file": "./installedContracts/DetailedERC20.sol",
+        "id": 160,
+        "nodeType": "ImportDirective",
+        "scope": 178,
+        "sourceUnit": 308,
+        "src": "146:48:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/cyril/Documents/2GetherProjects/ERC20_2GB_Token/contracts/Supply.sol",
+        "file": "./Supply.sol",
+        "id": 161,
+        "nodeType": "ImportDirective",
+        "scope": 178,
+        "sourceUnit": 157,
+        "src": "195:22:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": [],
+            "baseName": {
+              "contractScope": null,
+              "id": 162,
+              "name": "ERC20",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 350,
+              "src": "266:5:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ERC20_$350",
+                "typeString": "contract ERC20"
+              }
+            },
+            "id": 163,
+            "nodeType": "InheritanceSpecifier",
+            "src": "266:5:3"
+          },
+          {
+            "arguments": [],
+            "baseName": {
+              "contractScope": null,
+              "id": 164,
+              "name": "DetailedERC20",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 307,
+              "src": "273:13:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_DetailedERC20_$307",
+                "typeString": "contract DetailedERC20"
+              }
+            },
+            "id": 165,
+            "nodeType": "InheritanceSpecifier",
+            "src": "273:13:3"
+          },
+          {
+            "arguments": [],
+            "baseName": {
+              "contractScope": null,
+              "id": 166,
+              "name": "Supply",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 156,
+              "src": "288:6:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Supply_$156",
+                "typeString": "contract Supply"
+              }
+            },
+            "id": 167,
+            "nodeType": "InheritanceSpecifier",
+            "src": "288:6:3"
+          }
+        ],
+        "contractDependencies": [
+          33,
+          156,
+          273,
+          307,
+          350,
+          382,
+          438
+        ],
+        "contractKind": "contract",
+        "documentation": "@title Token2GB",
+        "fullyImplemented": false,
+        "id": 177,
+        "linearizedBaseContracts": [
+          177,
+          156,
+          33,
+          273,
+          438,
+          307,
+          350,
+          382
+        ],
+        "name": "Token2GB",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 175,
+              "nodeType": "Block",
+              "src": "394:2:3",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 176,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "hexValue": "3247657468657246726565546f6b656e",
+                    "id": 170,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "string",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "345:18:3",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_stringliteral_16e9df9c2b445ef4fd6ed5cb5a360cc08e7cf98ce9c440f48558033f81bbcfa8",
+                      "typeString": "literal_string \"2GetherFreeToken\""
+                    },
+                    "value": "2GetherFreeToken"
+                  },
+                  {
+                    "argumentTypes": null,
+                    "hexValue": "324742",
+                    "id": 171,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "string",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "365:5:3",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_stringliteral_f4b893895f61b618da00d41d97da74eb140586735eea33ee5b4a90b03cd926e9",
+                      "typeString": "literal_string \"2GB\""
+                    },
+                    "value": "2GB"
+                  },
+                  {
+                    "argumentTypes": null,
+                    "hexValue": "3138",
+                    "id": 172,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "372:2:3",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_18_by_1",
+                      "typeString": "int_const 18"
+                    },
+                    "value": "18"
+                  }
+                ],
+                "id": 173,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 169,
+                  "name": "DetailedERC20",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 307,
+                  "src": "331:13:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_type$_t_contract$_DetailedERC20_$307_$",
+                    "typeString": "type(contract DetailedERC20)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "331:44:3"
+              }
+            ],
+            "name": "Token2GB",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 168,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "323:2:3"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 174,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "394:0:3"
+            },
+            "scope": 177,
+            "src": "306:90:3",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 178,
+        "src": "245:154:3"
+      }
+    ],
+    "src": "0:399:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.21+commit.dfe3193c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.0",
+  "updatedAt": "2018-04-19T13:54:34.299Z"
+}

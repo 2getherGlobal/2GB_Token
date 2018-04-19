@@ -1,0 +1,20 @@
+{
+  "name": "erc20_2gb_token",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ropsten": "node ./node_modules/.bin/truffle migrate --network ropsten --reset | tee ./test/logs/ropsten.log",
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://integracion.2getherbank.com/blockchain/ERC20_2GB_Token.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "truffle-hdwallet-provider": "0.0.3"
+  }
+}
