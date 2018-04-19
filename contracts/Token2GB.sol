@@ -16,7 +16,7 @@ import "./Supply.sol";
 contract Token2GB is StandardToken, DetailedERC20, Supply {
     
     function Token2GB() 
-    DetailedERC20("2GetherFreeToken", "2GB", 18)       
+    DetailedERC20("2GetherAirdropToken", "2GB", 18)       
     public {}
 
 }
