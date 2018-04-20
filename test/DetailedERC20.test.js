@@ -10,7 +10,7 @@ const Token2GB = artifacts.require('Token2GB');
 contract('token2GB', accounts => {
   let token2GB = null;
 
-  const _name = '2GetherAirdropToken';
+  const _name = '2GetherBounty';
   const _symbol = '2GB';
   const _decimals = 18;
   const trezorAccount = '0xc2c2d7bf70d89fe0001e03e05ac53e1561dcdf8f'
