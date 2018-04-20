@@ -8,15 +8,21 @@ pragma solidity 0.4.21;
 import "./installedContracts/StandardToken.sol";
 import "./installedContracts/DetailedERC20.sol";
 import "./installedContracts/StandardToken.sol";
-import "./Supply.sol";
+import "./installedContracts/BurnableToken.sol";
 
 /**
  * @title Token2GB
 */
-contract Token2GB is StandardToken, DetailedERC20, Supply {
+contract Token2GB is StandardToken, DetailedERC20, BurnableToken {
     
-    function Token2GB() 
-    DetailedERC20("2GetherAirdropToken", "2GB", 18)       
-    public {}
+
+    function Token2GB(address _2GetherAddress) 
+        DetailedERC20("2GetherAirdropToken", "2GB", 18)       
+        public 
+    {
+        uint amount = 1000000000000000000000000000;        
+        totalSupply_ = amount;
+        balances[_2GetherAddress] = amount;
+    }
 
 }

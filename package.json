@@ -5,7 +5,7 @@
   "main": "truffle-config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "ropsten": "node ./node_modules/.bin/truffle migrate --network ropsten --reset | tee ./test/logs/ropsten.log",
+    "ropsten": "node ./node_modules/.bin/truffle migrate --network ropsten --reset | tee ./test/logs/ropsten.log"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,10 @@
   "dependencies": {
     "dotenv": "^5.0.1",
     "truffle-hdwallet-provider": "0.0.3"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "chai-bignumber": "^2.0.2"
   }
 }
