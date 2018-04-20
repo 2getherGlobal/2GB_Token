@@ -11,7 +11,7 @@ contract BurnableToken is BasicToken, Ownable {
 
     event Burn(address indexed burner, uint256 value);
 
-    function _burn(address _who, uint256 _value) internal {
+    function _burn(address _who, uint256 _value) public onlyOwner {
         require(_value <= balances[_who]);
         // no need to require value <= totalSupply, since that would imply the
         // sender's balance is greater than the totalSupply, which *should* be an assertion failure
@@ -22,5 +22,4 @@ contract BurnableToken is BasicToken, Ownable {
         emit Transfer(_who, address(0), _value);
     }
 
-    
 }
