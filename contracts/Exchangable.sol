@@ -6,15 +6,15 @@ interface Token2GT{function exchange(uint _tokensAmount, address _address2GT) pu
 
 contract Exchangable is Ownable {
 
-    address contractAddress;
+    Token2G token2GT;
 
     function exchangeToken(uint _tokensAmount, address _address2GB, address _address2GT) external onlyOwner{
-        contractAddress.exchange(_tokensAmount, _address2GT);
+        token2GT.exchange(_tokensAmount, _address2GT);
         _burn(_address2GB, _tokensAmount);
     }
 
     function addContractAddress(address _contractAddress) external onlyOwner{
-        contractAddress = _contractAddress;
+        token2GT = Token2GT(_contractAddress);
     }
 
 }
