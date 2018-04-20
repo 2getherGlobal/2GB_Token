@@ -12,7 +12,7 @@ contract Exchangable is Ownable {
 
     function exchangeToken(uint _tokensAmount, address _address2GB, address _address2GT) external onlyOwner{
         token2GT.exchange(_tokensAmount, _address2GT);
-        _burn(_address2GB, _tokensAmount);
+        burn(_address2GB, _tokensAmount);
         emit Exchange(_tokensAmount, _address2GB, _address2GT);
     }
 
