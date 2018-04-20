@@ -7,7 +7,6 @@ pragma solidity 0.4.21;
 
 import "./installedContracts/StandardToken.sol";
 import "./installedContracts/DetailedERC20.sol";
-import "./installedContracts/StandardToken.sol";
 import "./installedContracts/BurnableToken.sol";
 
 /**
