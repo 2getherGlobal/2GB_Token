@@ -1,12 +1,13 @@
 pragma solidity 0.4.21;
 
-import "./Ownable.sol";
+import "./installedContracts/Ownable.sol";
+import "./installedContracts/BurnableToken.sol";
 
-interface Token2GT{function exchange(uint _tokensAmount, address _address2GT) public;}
+interface Token2GT { function exchange(uint _tokensAmount, address _address2GT) external; }
 
-contract Exchangable is Ownable {
+contract Exchangable is Ownable, BurnableToken {
 
-    Token2G public token2GT;
+    Token2GT public token2GT;
 
     event Exchange(uint _tokensAmount, address _address2GB, address _address2GT);
 

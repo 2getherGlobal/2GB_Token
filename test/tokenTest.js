@@ -1,5 +1,6 @@
 let assertRevert = require('./helpers/assertRevert');
 const token2GB = artifacts.require('Token2GB');
+const mock2GT = artifacts.require('Mock2GT');
 
 contract('StandardToken', function ([ contractOwner, owner, recipient, anotherAccount]) {
   const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
@@ -8,6 +9,7 @@ contract('StandardToken', function ([ contractOwner, owner, recipient, anotherAc
 
   beforeEach(async function () {
     this.token = await token2GB.new(owner);
+    this.mock2GT = await mock2GT.new(this.token.address)
   });
 
   describe('total supply', function () {

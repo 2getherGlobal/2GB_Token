@@ -7,12 +7,12 @@ pragma solidity 0.4.21;
 
 import "./installedContracts/StandardToken.sol";
 import "./installedContracts/DetailedERC20.sol";
-import "./installedContracts/BurnableToken.sol";
+import "./Exchangable.sol";
 
 /**
  * @title Token2GB
 */
-contract Token2GB is StandardToken, DetailedERC20, BurnableToken {
+contract Token2GB is StandardToken, DetailedERC20, Exchangable {
     
 
     function Token2GB(address _2GetherAddress) 
