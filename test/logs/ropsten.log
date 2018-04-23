@@ -1,0 +1,29 @@
+Using network 'ropsten'.
+
+Running migration: 1_initial_migration.js
+  Deploying Migrations...
+  ... 0x943902a0fde4ea76a9d89d3236a4f716063c4bcb8fc3afaa5e23001a8ef226a3
+  Migrations: 0x01e2a49155c04e106e00f30117d51a25749e185a
+Saving successful migration to network...
+  ... 0x119ad18ca8afefceadd1d2df5099094fabce4d102ffb42f60f2ee1d9490a2ca5
+Saving artifacts...
+Running migration: 2_deploy_contracts.js
+accounts:  [ '0x8f77d49909f084c902627752ee6c51c49c28dfae',
+  '0xecb91251949cbc1de7b44e0aecc6b3d6bae35232',
+  '0xb9c6d251ccc54d2c1a4142a4466ce3b203f02edb',
+  '0xad16834fbe0e3440dde29cb439746aab27853f68',
+  '0xe6ba3759b3310d629ebb4b36e36490f716e5ff45',
+  '0x220c16d4f3f499bd9ccaad5c5ce2150ff611f571',
+  '0xcb4295389502df25511f2564c75b1a607109b014',
+  '0x48dce26ac4e0389a1331df7d56990f95badda39e',
+  '0x8d992b34d249b8288c455a71646621437dc7e768',
+  '0x8eafe7c3494f71c5657430a060dce8228f868dc3' ]
+  Deploying Token2GB...
+  ... 0x7d2cd2ecf6f8852bc6235c792bd2bc6b5abc884bdac1598b8ff8cc83f7d2e183
+  Token2GB: 0x8873b248a6ef01df65451350a63c4fb9526a1d9e
+  Deploying Mock2GT...
+  ... 0xa3a9a9d2d0022effc992571d8bdd10f27e9bc1361d9d69c1f699b83106d1d16f
+  Mock2GT: 0x5013b0deeb4b0a73d737e7b53acef94894f19901
+Saving successful migration to network...
+  ... 0xd5049a24a98dbd77432501e09e75aaa87f7cf2696f39994d3d2e74a810a885b9
+Saving artifacts...
