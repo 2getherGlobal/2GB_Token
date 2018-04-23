@@ -5,7 +5,7 @@
   "main": "truffle-config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "ropsten": "node ./node_modules/.bin/truffle migrate --network ropsten --reset | tee ./test/logs/ropsten.log"
+    "ropsten": "truffle migrate --network ropsten --reset | tee ./test/logs/ropsten.log"
   },
   "repository": {
     "type": "git",
