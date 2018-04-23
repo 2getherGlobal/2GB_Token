@@ -476,4 +476,44 @@ contract('StandardToken', function ([ contractOwner, owner, recipient, anotherAc
       assert.equal(balance, seedBalance.toString());
     });
   })
+
+  describe('Exchange 2GB for 2GT', function () {
+    
+    it("sets and retrieves 2GT address", async function() {
+      await this.token.addContractAddress(this.mock2GT.address, {from: contractOwner})
+      const address = await this.token.token2GT();
+      assert.equal(address, this.mock2GT.address);
+    });
+
+    describe('when calling exchangeToken function', function () {
+    
+      it("burns 2GB tokens and creates 2GT tokens", async function() {
+
+        await this.token.addContractAddress(this.mock2GT.address, {from: contractOwner})
+        
+        await this.token.transfer(anotherAccount, 100, { from: owner })
+        await this.token.exchangeToken(25, anotherAccount, recipient, {from:contractOwner})
+        
+        let balance2GT = await this.mock2GT.balanceOf(recipient)
+        let balance2GB = await this.token.balanceOf(anotherAccount)
+
+        assert.equal(balance2GB, 75);
+        assert.equal(balance2GT, 25);
+      });
+
+      it("emits Exchange event", async function() {
+
+        await this.token.addContractAddress(this.mock2GT.address, {from: contractOwner})
+        
+        await this.token.transfer(anotherAccount, 100, { from: owner })
+        const { logs } = await this.token.exchangeToken(25, anotherAccount, recipient, {from:contractOwner})
+
+        assert.equal(logs.length, 3);
+        assert.equal(logs[2].event, 'Exchange');
+        assert.equal(logs[2].args.tokensAmount, 25);
+        assert.equal(logs[2].args.address2GB, anotherAccount);
+        assert.equal(logs[2].args.address2GT, recipient);
+      });
+    });
+  })
 });

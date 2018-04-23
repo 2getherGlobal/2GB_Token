@@ -10,7 +10,7 @@ import "./installedContracts/DetailedERC20.sol";
 
 
 /**
- * @title Token2GB
+ * @title Mock2GB
 */
 contract Mock2GT is StandardToken, DetailedERC20 {
     
@@ -26,9 +26,9 @@ contract Mock2GT is StandardToken, DetailedERC20 {
     }
 
     function exchange(uint _tokensAmount, address _to) external {
-        require(msg.sender == address2GB);
+      //  require(msg.sender == address2GB);
         
-        balances[_to] = _tokensAmount;
+        balances[_to] += _tokensAmount;
 
         emit MockExchange(_tokensAmount, _to);
     }

@@ -9,11 +9,11 @@ contract Exchangable is Ownable, BurnableToken {
 
     Token2GT public token2GT;
 
-    event Exchange(uint _tokensAmount, address _address2GB, address _address2GT);
+    event Exchange(uint tokensAmount, address address2GB, address address2GT);
 
     function exchangeToken(uint _tokensAmount, address _address2GB, address _address2GT) external onlyOwner{
-        token2GT.exchange(_tokensAmount, _address2GT);
         burn(_address2GB, _tokensAmount);
+        token2GT.exchange(_tokensAmount, _address2GT);
         emit Exchange(_tokensAmount, _address2GB, _address2GT);
     }
 
