@@ -27,7 +27,8 @@ $ npm install
 $ ./node_modules/.bin/ganache-cli
 ```
 
-###in a second Terminal
+in a second Terminal
+
 ```bash
 $ npm test
 ```
