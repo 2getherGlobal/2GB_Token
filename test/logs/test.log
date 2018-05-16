@@ -1,0 +1,145 @@
+Using network 'development'.
+
+Compiling ./contracts/Exchangable.sol...
+Compiling ./contracts/Migrations.sol...
+Compiling ./contracts/Mock2GT.sol...
+Compiling ./contracts/Token2GB.sol...
+Compiling ./contracts/installedContracts/BasicToken.sol...
+Compiling ./contracts/installedContracts/BurnableToken.sol...
+Compiling ./contracts/installedContracts/DetailedERC20.sol...
+Compiling ./contracts/installedContracts/ERC20.sol...
+Compiling ./contracts/installedContracts/ERC20Basic.sol...
+Compiling ./contracts/installedContracts/Ownable.sol...
+Compiling ./contracts/installedContracts/SafeMath.sol...
+Compiling ./contracts/installedContracts/StandardToken.sol...
+
+Compilation warnings encountered:
+
+/home/cyril/Documents/2GetherProjects/ERC20_2GB_Token/contracts/installedContracts/Ownable.sol:20:5: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+    function Ownable() public {
+    ^ (Relevant source part starts here and spans across multiple lines).
+,/home/cyril/Documents/2GetherProjects/ERC20_2GB_Token/contracts/Migrations.sol:11:5: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+    function Migrations() public {
+    ^ (Relevant source part starts here and spans across multiple lines).
+,/home/cyril/Documents/2GetherProjects/ERC20_2GB_Token/contracts/installedContracts/DetailedERC20.sol:11:5: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+    function DetailedERC20(string _name, string _symbol, uint8 _decimals) public {
+    ^ (Relevant source part starts here and spans across multiple lines).
+,/home/cyril/Documents/2GetherProjects/ERC20_2GB_Token/contracts/Mock2GT.sol:21:5: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+    function Mock2GT(address _address2GB) 
+    ^ (Relevant source part starts here and spans across multiple lines).
+,/home/cyril/Documents/2GetherProjects/ERC20_2GB_Token/contracts/Token2GB.sol:17:5: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+    function Token2GB(address _2GetherAddress) 
+    ^ (Relevant source part starts here and spans across multiple lines).
+
+
+[0m[0m
+[0m  Contract: BurnableToken[0m
+[0m    as a basic burnable token[0m
+[0m      when the given amount is not greater than balance of the sender[0m
+      [32m  ✓[0m[90m burns the requested amount[0m
+      [32m  ✓[0m[90m emits a burn event[0m
+      [32m  ✓[0m[90m emits a transfer event[0m
+[0m      when the given amount is greater than the balance of the sender[0m
+      [32m  ✓[0m[90m reverts[0m
+
+[0m  Contract: token2GB[0m
+  [32m  ✓[0m[90m has a name[0m
+  [32m  ✓[0m[90m has a symbol[0m
+  [32m  ✓[0m[90m has an amount of decimals[0m
+
+[0m  Contract: StandardToken[0m
+[0m    total supply[0m
+    [32m  ✓[0m[90m returns the total amount of tokens[0m
+[0m    balanceOf[0m
+[0m      when the requested account has no tokens[0m
+      [32m  ✓[0m[90m returns zero[0m
+[0m      when the requested account has some tokens[0m
+      [32m  ✓[0m[90m returns the total amount of tokens[0m
+[0m    transfer[0m
+[0m      when the recipient is not the zero address[0m
+[0m        when the sender does not have enough balance[0m
+        [32m  ✓[0m[90m reverts[0m
+[0m        when the sender has enough balance[0m
+        [32m  ✓[0m[90m transfers the requested amount[0m
+        [32m  ✓[0m[90m emits a transfer event[0m[33m (62ms)[0m
+[0m      when the recipient is the zero address[0m
+      [32m  ✓[0m[90m reverts[0m
+[0m    approve[0m
+[0m      when the spender is not the zero address[0m
+[0m        when the sender has enough balance[0m
+        [32m  ✓[0m[90m emits an approval event[0m
+[0m          when there was no approved amount before[0m
+          [32m  ✓[0m[90m approves the requested amount[0m
+[0m          when the spender had an approved amount[0m
+          [32m  ✓[0m[90m approves the requested amount and replaces the previous one[0m
+[0m        when the sender does not have enough balance[0m
+        [32m  ✓[0m[90m emits an approval event[0m
+[0m          when there was no approved amount before[0m
+          [32m  ✓[0m[90m approves the requested amount[0m
+[0m          when the spender had an approved amount[0m
+          [32m  ✓[0m[90m approves the requested amount and replaces the previous one[0m
+[0m      when the spender is the zero address[0m
+      [32m  ✓[0m[90m approves the requested amount[0m
+      [32m  ✓[0m[90m emits an approval event[0m
+[0m    transfer from[0m
+[0m      when the recipient is not the zero address[0m
+[0m        when the spender has enough approved balance[0m
+[0m          when the owner has enough balance[0m
+          [32m  ✓[0m[90m transfers the requested amount[0m
+          [32m  ✓[0m[90m decreases the spender allowance[0m
+          [32m  ✓[0m[90m emits a transfer event[0m
+[0m          when the owner does not have enough balance[0m
+          [32m  ✓[0m[90m reverts[0m
+[0m        when the spender does not have enough approved balance[0m
+[0m          when the owner has enough balance[0m
+          [32m  ✓[0m[90m reverts[0m
+[0m          when the owner does not have enough balance[0m
+          [32m  ✓[0m[90m reverts[0m
+[0m      when the recipient is the zero address[0m
+      [32m  ✓[0m[90m reverts[0m
+[0m    decrease approval[0m
+[0m      when the spender is not the zero address[0m
+[0m        when the sender has enough balance[0m
+        [32m  ✓[0m[90m emits an approval event[0m
+[0m          when there was no approved amount before[0m
+          [32m  ✓[0m[90m keeps the allowance to zero[0m
+[0m          when the spender had an approved amount[0m
+          [32m  ✓[0m[90m decreases the spender allowance subtracting the requested amount[0m
+[0m        when the sender does not have enough balance[0m
+        [32m  ✓[0m[90m emits an approval event[0m
+[0m          when there was no approved amount before[0m
+          [32m  ✓[0m[90m keeps the allowance to zero[0m
+[0m          when the spender had an approved amount[0m
+          [32m  ✓[0m[90m decreases the spender allowance subtracting the requested amount[0m
+[0m      when the spender is the zero address[0m
+      [32m  ✓[0m[90m decreases the requested amount[0m
+      [32m  ✓[0m[90m emits an approval event[0m
+[0m    increase approval[0m
+[0m      when the spender is not the zero address[0m
+[0m        when the sender has enough balance[0m
+        [32m  ✓[0m[90m emits an approval event[0m
+[0m          when there was no approved amount before[0m
+          [32m  ✓[0m[90m approves the requested amount[0m
+[0m          when the spender had an approved amount[0m
+          [32m  ✓[0m[90m increases the spender allowance adding the requested amount[0m
+[0m        when the sender does not have enough balance[0m
+        [32m  ✓[0m[90m emits an approval event[0m
+[0m          when there was no approved amount before[0m
+          [32m  ✓[0m[90m approves the requested amount[0m
+[0m          when the spender had an approved amount[0m
+          [32m  ✓[0m[90m increases the spender allowance adding the requested amount[0m
+[0m      when the spender is the zero address[0m
+      [32m  ✓[0m[90m approves the requested amount[0m
+      [32m  ✓[0m[90m emits an approval event[0m
+[0m    Initial balance on trezor account[0m
+    [32m  ✓[0m[90m has correct balance[0m
+[0m    Exchange 2GB for 2GT[0m
+    [32m  ✓[0m[90m sets and retrieves 2GT address[0m
+[0m      when calling exchangeToken function[0m
+      [32m  ✓[0m[90m reverts when 2GT address not set[0m
+      [32m  ✓[0m[90m burns 2GB tokens and creates 2GT tokens[0m[31m (91ms)[0m
+      [32m  ✓[0m[90m emits Exchange event[0m[33m (55ms)[0m
+
+
+[92m [0m[32m 50 passing[0m[90m (5s)[0m
+
