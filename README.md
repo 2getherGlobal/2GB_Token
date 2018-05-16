@@ -1,4 +1,4 @@
-# 2Gether PreSale
+# 2Gether Bounty Token
 
 ## Smart Contracts and deployment for the [2Gether](https://www.2gether.global/) Bounty Token
 
