@@ -1,0 +1,27 @@
+digraph G {
+    edge [arrowsize=1, weight=4., color=navy, constraint=true];
+    graph [label="Contracts Inheritance Tree", labelloc=t, fontsize=30];
+    
+    subgraph cluster_2Gether {
+        graph [fontsize=25, label="2Gether PreSale Contracts", style=filled, color=lightgrey];
+        node [fillcolor=green, style="rounded,filled", shape=polygon];
+        PreSale; Capped; InstitutionalInvestments; BonusStage; UpdateEthEur; WhiteList;
+    
+    }
+
+    {   
+        node [fillcolor=red, style="rounded,filled", shape=doubleoctagon];
+        Pausable; Ownable; SafeMath; Migrations;
+    }
+
+	PreSale -> BonusStage;
+    BonusStage -> InstitutionalInvestments;
+    BonusStage -> WhiteList;
+    WhiteList -> Pausable;
+    InstitutionalInvestments -> Capped;
+    Capped -> SafeMath;
+    Capped -> UpdateEthEur;
+    UpdateEthEur -> Ownable;
+    Migrations -> Ownable;
+
+}

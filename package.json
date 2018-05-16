@@ -4,7 +4,8 @@
   "description": "",
   "main": "truffle-config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "main": "truffle migrate --network main --reset | tee ./test/logs/main.log",
+    "test": "node ./node_modules/grunt/bin/grunt test | tee ./test/logs/test.log",
     "ropsten": "node ./node_modules/.bin/truffle migrate --network ropsten --reset | tee ./test/logs/ropsten.log"
   },
   "repository": {
@@ -15,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^5.0.1",
+    "ganache-cli": "^6.0.3",
     "truffle-hdwallet-provider": "0.0.3"
   },
   "devDependencies": {

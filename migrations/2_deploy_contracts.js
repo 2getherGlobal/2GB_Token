@@ -1,10 +1,10 @@
-var Token = artifacts.require("./Token2GB.sol");
-var Mock = artifacts.require("./Mock2GT.sol");
-const trezorAccount = '0xc2c2d7bf70d89fe0001e03e05ac53e1561dcdf8f'
+const Token = artifacts.require("./Token2GB.sol");
+//const Mock = artifacts.require("./Mock2GT.sol");
+const trezorAccount = '0x40A1c574cFeC7D8Bc03B6Ca0d739972596f37F31'
 
 module.exports = function(deployer) {
   deployer.deploy(Token, trezorAccount)
-    .then(()=>{
-      return deployer.deploy(Mock, Token.address)
-    });
+    //.then(()=>{
+    //  return deployer.deploy(Mock, Token.address)
+    //});
 };

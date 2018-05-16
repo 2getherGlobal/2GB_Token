@@ -14,7 +14,6 @@ import "./Exchangable.sol";
 */
 contract Token2GB is StandardToken, DetailedERC20, Exchangable {
     
-
     function Token2GB(address _2GetherAddress) 
         DetailedERC20("2GetherBounty", "2GB", 18)       
         public 

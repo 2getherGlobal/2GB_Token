@@ -24,13 +24,13 @@ module.exports = {
       gas: 4600000,
       gasPrice: 20000000000
     },
-    live:  {
+    main:  {
       provider: function() {
-        return new HDWalletProvider(process.env.SECRET, "https://Mainnet.infura.io/" + process.env.INFURA)
+        return new HDWalletProvider(process.env.SECRET, "https://mainnet.infura.io/" + process.env.INFURA)
       },
-      network_id: 3,
+      network_id: 1,
       gas: 4600000,
-      gasPrice: 20000000000
+      gasPrice: 6000000000
     }
   }
 }
