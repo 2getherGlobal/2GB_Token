@@ -3,25 +3,28 @@ digraph G {
     graph [label="Contracts Inheritance Tree", labelloc=t, fontsize=30];
     
     subgraph cluster_2Gether {
-        graph [fontsize=25, label="2Gether PreSale Contracts", style=filled, color=lightgrey];
+        graph [fontsize=25, label="2Gether Bounty Contracts", style=filled, color=lightgrey];
         node [fillcolor=green, style="rounded,filled", shape=polygon];
-        PreSale; Capped; InstitutionalInvestments; BonusStage; UpdateEthEur; WhiteList;
+        Exchangable; Token2GB;
     
     }
 
     {   
         node [fillcolor=red, style="rounded,filled", shape=doubleoctagon];
-        Pausable; Ownable; SafeMath; Migrations;
+        BasicToken; BurnableToken; DtetailedERC20; ERC20; ERC20Basic; Ownable; StandardToken;
     }
 
-	PreSale -> BonusStage;
-    BonusStage -> InstitutionalInvestments;
-    BonusStage -> WhiteList;
-    WhiteList -> Pausable;
-    InstitutionalInvestments -> Capped;
-    Capped -> SafeMath;
-    Capped -> UpdateEthEur;
-    UpdateEthEur -> Ownable;
-    Migrations -> Ownable;
+	Token2GB -> StandardToken;
+    Token2GB -> DtetailedERC20;
+    Token2GB -> Exchangable;
+    Exchangable -> Ownable;
+    Exchangable -> BurnableToken;
+    StandardToken -> ERC20;
+    StandardToken -> BasicToken;
+    ERC20 -> ERC20Basic;
+    BasicToken -> ERC20Basic;
+    BurnableToken -> BasicToken;
+    BurnableToken -> Ownable;
+    DtetailedERC20 -> ERC20;
 
 }

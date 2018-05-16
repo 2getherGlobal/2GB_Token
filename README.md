@@ -3,22 +3,16 @@
 ## Smart Contracts and deployment for the [2Gether](https://www.2gether.global/) Bounty Token
 
 ### Below a few notes concerning the contracts:
-* We use eleven [openZepplin](https://github.com/OpenZeppelin/zeppelin-solidity) reusable and secure Smart Contracts 
-  - [x] [Math](https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/math/Math.sol)
-  - [x] [Ownable](https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/ownership/Ownable.sol)
-  - [x] [SafeMath](https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/math/SafeMath.sol)
-  - [x] [Migration](https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/lifecycle/Migrations.sol)
-  - [x] [Pausable](https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/lifecycle/Pausable.sol)
+* We use nine [openZepplin](https://github.com/OpenZeppelin/zeppelin-solidity) reusable and secure Smart Contracts 
 
-* We added six more contracts:
-  - [x] [PreSale](./contracts/PreSale.sol) - Contain the details of the coin (Name, Symbol, Decimals, wallet addresses)
-  - [x] [InstitutionalInvestments](./contracts/InstitutionalInvestments.sol) - Contain the function to add Private Investors individual Investments
-  - [x] [BonusStages](./contracts/BonusStages.sol) - Contain the functions with the Bonus stages
-  - [x] [Capped](./contracts/CappedCrowdsale.sol) - Contain the ogic from zepplin contract with some changes
-  - [x] [UpdateEthEur](./contracts/GethEtheur.sol) - Contain logic to get the price of ETH/eur 
-  - [x] [WhiteList](./contracts/WhiteList.sol) - Contain logic to get the KYC matching the WhiteList Mapping
+* We added Three more contracts:
+  - [x] [Token2GB](./contracts/Exchangble.sol) 
+  - [x] [Exchangble](./contracts/Exchangble.sol) 
+  - [x] [Mock2GT](./contracts/Exchangble.sol) - for testing purposes only
+  
+[![](/inheritanceTree/inheritanceTree.png)](/inheritanceTree/inheritanceTree.png)
 
-[![](/doc/inheritanceTree/inheritanceTree.png)](/doc/inheritanceTree/inheritanceTree.png)
+[documentation](./doc/doc.md)
 
 ## Getting Started
 
