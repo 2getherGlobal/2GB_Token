@@ -6,9 +6,9 @@
 * We use nine [openZepplin](https://github.com/OpenZeppelin/zeppelin-solidity) reusable and secure Smart Contracts 
 
 * We added Three more contracts:
-  - [x] [Token2GB](./contracts/Exchangble.sol) 
+  - [x] [Token2GB](./contracts/Token2GB.sol) 
   - [x] [Exchangble](./contracts/Exchangble.sol) 
-  - [x] [Mock2GT](./contracts/Exchangble.sol) - for testing purposes only
+  - [x] [Mock2GT](./contracts/Mock2GT.sol) - for testing purposes only
   
 [![](/doc/inheritanceTree/inheritanceTree.png)](./doc/inheritanceTree/inheritanceTree.png)
 
