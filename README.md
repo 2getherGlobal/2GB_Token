@@ -10,7 +10,7 @@
   - [x] [Exchangble](./contracts/Exchangble.sol) 
   - [x] [Mock2GT](./contracts/Exchangble.sol) - for testing purposes only
   
-[![](/inheritanceTree/inheritanceTree.png)](/inheritanceTree/inheritanceTree.png)
+[![](/inheritanceTree/inheritanceTree.png)](./inheritanceTree/inheritanceTree.png)
 
 [documentation](./doc/doc.md)
 
@@ -27,9 +27,8 @@ $ npm install
 $ ./node_modules/.bin/ganache-cli
 ```
 
-####in a second Terminal
+###in a second Terminal
 ```bash
-$ ./node_modules/.bin/ganache-cli
 $ npm test
 ```
 
