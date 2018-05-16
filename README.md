@@ -10,7 +10,7 @@
   - [x] [Exchangble](./contracts/Exchangble.sol) 
   - [x] [Mock2GT](./contracts/Exchangble.sol) - for testing purposes only
   
-[![](/inheritanceTree/inheritanceTree.png)](./inheritanceTree/inheritanceTree.png)
+[![](/doc/inheritanceTree/inheritanceTree.png)](./doc/inheritanceTree/inheritanceTree.png)
 
 [documentation](./doc/doc.md)
 
