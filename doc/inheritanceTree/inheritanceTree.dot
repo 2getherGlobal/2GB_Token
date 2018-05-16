@@ -11,11 +11,11 @@ digraph G {
 
     {   
         node [fillcolor=red, style="rounded,filled", shape=doubleoctagon];
-        BasicToken; BurnableToken; DtetailedERC20; ERC20; ERC20Basic; Ownable; StandardToken;
+        BasicToken; BurnableToken; DetailedERC20; ERC20; ERC20Basic; Ownable; StandardToken;
     }
 
 	Token2GB -> StandardToken;
-    Token2GB -> DtetailedERC20;
+    Token2GB -> DetailedERC20;
     Token2GB -> Exchangable;
     Exchangable -> Ownable;
     Exchangable -> BurnableToken;
@@ -25,6 +25,6 @@ digraph G {
     BasicToken -> ERC20Basic;
     BurnableToken -> BasicToken;
     BurnableToken -> Ownable;
-    DtetailedERC20 -> ERC20;
+    DetailedERC20 -> ERC20;
 
 }
