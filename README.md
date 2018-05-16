@@ -49,4 +49,4 @@ $ npm test
 * [2Gether](https://www.2gether.global/) BlockChain Team
 
 ## License
-Code released under the [MIT License](./licence).
+Code released under the [MIT License](LICENSE.md).
