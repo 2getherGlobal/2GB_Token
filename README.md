@@ -7,7 +7,7 @@
 
 * We added Three more contracts:
   - [x] [Token2GB](./contracts/Token2GB.sol) 
-  - [x] [Exchangble](./contracts/Exchangble.sol) 
+  - [x] [Exchangable](./contracts/Exchangable.sol) 
   - [x] [Mock2GT](./contracts/Mock2GT.sol) - for testing purposes only
   
 [![](/doc/inheritanceTree/inheritanceTree.png)](./doc/inheritanceTree/inheritanceTree.png)
