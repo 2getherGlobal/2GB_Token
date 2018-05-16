@@ -487,6 +487,11 @@ contract('StandardToken', function ([ contractOwner, owner, recipient, anotherAc
 
     describe('when calling exchangeToken function', function () {
     
+      it("reverts when 2GT address not set", async function() {
+        await this.token.transfer(anotherAccount, 100, { from: owner })
+        await assertRevert(this.token.exchangeToken(25, anotherAccount, recipient, {from:contractOwner}))
+      });
+
       it("burns 2GB tokens and creates 2GT tokens", async function() {
 
         await this.token.addContractAddress(this.mock2GT.address, {from: contractOwner})

@@ -23,7 +23,7 @@ $ npm install
 ```
 
 ### Running the test
-```bash
+```bash#
 $ ./node_modules/.bin/ganache-cli
 ```
 
